@@ -1,0 +1,51 @@
+services:
+  # USJ FOE Backend FastAPI Application
+  - type: web
+    name: usj-foe-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile.prod
+    dockerContext: ./backend
+    plan: standard
+    region: singapore
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: false
+      - key: PORT
+        value: 8000
+      - key: LOG_LEVEL
+        value: INFO
+      - key: DATABASE_URL
+        fromDatabase:
+          name: usj-foe-postgres
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 60
+      - key: REFRESH_TOKEN_EXPIRE_DAYS
+        value: 7
+      - key: ALLOWED_EMAIL_DOMAINS
+        value: '["eng.sjp.ac.lk","sjp.ac.lk"]'
+      - key: ENFORCE_EMAIL_DOMAIN
+        value: true
+      - key: BACKEND_CORS_ORIGINS
+        value: '["https://usj-foe-resources.vercel.app","http://localhost:3000"]'
+      - key: RATE_LIMITING_ENABLED
+        value: true
+      - key: MAX_UPLOAD_SIZE_MB
+        value: 50
+
+databases:
+  # Managed PostgreSQL Production Database
+  - name: usj-foe-postgres
+    databaseName: usj_resource_db
+    user: usj_admin
+    plan: starter
+    region: singapore
+    postgresMajorVersion: 16

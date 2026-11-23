@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Official USJ Crimson Red #C41E3A */
+    --primary: 350 73% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    /* USJ Academic Navy #1E293B */
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Official USJ Gold #FDB913 */
+    --accent: 43 98% 53%;
+    --accent-foreground: 28 77% 26%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 350 73% 44%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 20% 98%;
+
+    --card: 222 40% 11%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 222 40% 11%;
+    --popover-foreground: 210 20% 98%;
+
+    /* Lifted Crimson for dark mode #E8455F */
+    --primary: 349 78% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 93% 58%;
+    --accent-foreground: 28 77% 16%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 349 78% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .surface-hero {
+    background-color: hsl(var(--card));
+    background-image:
+      radial-gradient(90% 130% at 100% 0%, rgba(196, 30, 58, 0.08), transparent 60%),
+      linear-gradient(135deg, rgba(196, 30, 58, 0.04) 0%, hsl(var(--card)) 70%);
+  }
+
+  .surface-band {
+    background-color: #7A1230;
+    background-image:
+      radial-gradient(120% 140% at 100% 0%, rgba(255, 255, 255, 0.16), transparent 55%),
+      linear-gradient(135deg, #C41E3A 0%, #7A1230 100%);
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #C41E3A 0%, #8B1538 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(140deg, rgba(188, 9, 58, 0.88) 0%, rgba(139, 14, 79, 0.80) 48%, rgba(17, 26, 58, 0.90) 100%);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #FDB913 0%, #D97706 100%);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .glass-dark {
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
