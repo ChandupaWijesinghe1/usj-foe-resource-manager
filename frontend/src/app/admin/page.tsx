@@ -95,11 +95,11 @@ function AdminPortalLogin({ onLoginSuccess }: { onLoginSuccess: () => void }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#f7f8fa] dark:bg-background p-3 sm:p-6 flex items-center justify-center">
-      <div className="mx-auto flex w-full max-w-[1240px] min-h-[calc(100vh-3rem)] overflow-hidden rounded-2xl border border-border bg-card shadow-elevation-lg">
+    <main className="min-h-screen lg:h-screen bg-card flex">
+      <div className="flex w-full min-h-screen lg:min-h-0 lg:h-screen lg:flex-row-reverse">
         {/* Left Form Section */}
-        <section className="flex w-full items-center justify-center px-6 py-10 sm:px-12 lg:w-[50%] lg:px-14">
-          <div className="w-full max-w-[460px] space-y-6">
+        <section className="flex w-full justify-center px-6 py-8 sm:px-12 lg:w-[50%] lg:px-14 lg:py-6 lg:overflow-y-auto">
+          <div className="my-auto w-full max-w-[460px] space-y-4">
             {/* Header with University Crest */}
             <div className="flex items-center gap-3.5">
               <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white p-1 shadow-elevation-sm ring-1 ring-border">
@@ -132,13 +132,11 @@ function AdminPortalLogin({ onLoginSuccess }: { onLoginSuccess: () => void }) {
             </div>
 
             {/* Institutional Security Notice */}
-            <div className="rounded-xl border border-primary/20 bg-primary/5 p-3.5 text-xs text-muted-foreground space-y-1">
-              <div className="flex items-center gap-1.5 font-bold text-primary">
-                <Shield className="h-4 w-4" />
-                <span>Pre-Provisioned Seed Accounts Only</span>
-              </div>
-              <p className="leading-relaxed">
-                Administrative roles are strictly assigned by Faculty Administration. Self-registration is disabled for all administrative positions.
+            <div className="flex items-start gap-2 rounded-xl border border-primary/20 bg-primary/5 px-3.5 py-2.5 text-xs">
+              <Shield className="h-4 w-4 shrink-0 text-primary" />
+              <p className="text-muted-foreground">
+                <span className="font-bold text-primary">Pre-provisioned accounts only.</span>{" "}
+                Self-registration is disabled for administrative positions.
               </p>
             </div>
 
@@ -160,10 +158,10 @@ function AdminPortalLogin({ onLoginSuccess }: { onLoginSuccess: () => void }) {
                   type="button"
                   disabled={isSubmitting || quickRole !== null}
                   onClick={() => handleQuickSeed("admin@eng.sjp.ac.lk", "Admin@USJ2026!", "SUPER_ADMIN")}
-                  className="flex items-center justify-between p-2.5 rounded-lg border bg-card hover:border-primary/60 hover:bg-primary/5 transition-all text-left group"
+                  className="flex items-center justify-between px-2.5 py-1.5 rounded-lg border bg-card hover:border-primary/60 hover:bg-primary/5 transition-all text-left group"
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                    <div className="h-7 w-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
                       🛡️
                     </div>
                     <div>
@@ -185,10 +183,10 @@ function AdminPortalLogin({ onLoginSuccess }: { onLoginSuccess: () => void }) {
                   type="button"
                   disabled={isSubmitting || quickRole !== null}
                   onClick={() => handleQuickSeed("facility.admin@eng.sjp.ac.lk", "Facility@USJ2026!", "FACILITY_ADMIN")}
-                  className="flex items-center justify-between p-2.5 rounded-lg border bg-card hover:border-amber-500/60 hover:bg-amber-50/50 dark:hover:bg-amber-950/20 transition-all text-left group"
+                  className="flex items-center justify-between px-2.5 py-1.5 rounded-lg border bg-card hover:border-amber-500/60 hover:bg-amber-50/50 dark:hover:bg-amber-950/20 transition-all text-left group"
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="h-8 w-8 rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold text-sm">
+                    <div className="h-7 w-7 rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold text-sm">
                       🏛️
                     </div>
                     <div>
@@ -210,10 +208,10 @@ function AdminPortalLogin({ onLoginSuccess }: { onLoginSuccess: () => void }) {
                   type="button"
                   disabled={isSubmitting || quickRole !== null}
                   onClick={() => handleQuickSeed("lab.admin@eng.sjp.ac.lk", "LabAdmin@USJ2026!", "LAB_ADMIN")}
-                  className="flex items-center justify-between p-2.5 rounded-lg border bg-card hover:border-cyan-500/60 hover:bg-cyan-50/50 dark:hover:bg-cyan-950/20 transition-all text-left group"
+                  className="flex items-center justify-between px-2.5 py-1.5 rounded-lg border bg-card hover:border-cyan-500/60 hover:bg-cyan-50/50 dark:hover:bg-cyan-950/20 transition-all text-left group"
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="h-8 w-8 rounded-lg bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 flex items-center justify-center font-bold text-sm">
+                    <div className="h-7 w-7 rounded-lg bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 flex items-center justify-center font-bold text-sm">
                       🔬
                     </div>
                     <div>
@@ -402,7 +400,7 @@ function AdminPortalLogin({ onLoginSuccess }: { onLoginSuccess: () => void }) {
           />
 
           <div className="relative z-10 max-w-md px-8 text-center space-y-6">
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur-md p-2 shadow-elevation-lg ring-2 ring-white/30">
+            <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-[2rem] bg-white/10 backdrop-blur-md p-2.5 shadow-elevation-lg ring-2 ring-white/30">
               <img
                 src="/logo.jpg"
                 alt="University Crest"

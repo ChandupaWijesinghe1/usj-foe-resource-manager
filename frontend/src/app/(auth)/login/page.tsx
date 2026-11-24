@@ -76,11 +76,11 @@ function LoginContent() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f7f8fa] dark:bg-background p-3 sm:p-6 flex items-center justify-center">
-      <div className="mx-auto flex w-full max-w-[1240px] min-h-[calc(100vh-3rem)] overflow-hidden rounded-2xl border border-border bg-card shadow-elevation-lg">
+    <main className="min-h-screen lg:h-screen bg-card flex">
+      <div className="flex w-full min-h-screen lg:min-h-0 lg:h-screen lg:flex-row-reverse">
         {/* Left Form Section */}
-        <section className="flex w-full items-center justify-center px-6 py-10 sm:px-12 lg:w-[50%] lg:px-14">
-          <div className="w-full max-w-[440px] space-y-6">
+        <section className="flex w-full justify-center px-6 py-8 sm:px-12 lg:w-[50%] lg:px-14 lg:py-6 lg:overflow-y-auto">
+          <div className="my-auto w-full max-w-[440px] space-y-4">
             {/* Header with University Badge */}
             <div className="flex items-center gap-3.5">
               <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white p-1 shadow-elevation-sm ring-1 ring-border">
@@ -368,7 +368,7 @@ function LoginContent() {
 
           <div className="relative z-10 max-w-md px-8 text-center space-y-6">
             {/* University Crest */}
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur-md p-2 shadow-elevation-lg ring-2 ring-white/30">
+            <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-[2rem] bg-white/10 backdrop-blur-md p-2.5 shadow-elevation-lg ring-2 ring-white/30">
               <img
                 src="/logo.jpg"
                 alt="University of Sri Jayewardenepura Crest"

@@ -142,13 +142,7 @@ export default function EquipmentPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Laboratory Equipment</h1>
-          <p className="text-xs text-muted-foreground mt-0.5">
-            Browse laboratory equipment and request loans
-          </p>
-        </div>
+      <div className="flex sm:justify-end">
         <div className="relative w-full sm:w-64">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input

@@ -377,7 +377,7 @@ class AdminService:
                 "id": f"user-{u.id}",
                 "activity_type": "USER_REGISTRATION",
                 "title": f"New Account: {u.full_name}",
-                "description": f"Role: {u.role.value} &bull; Email: {u.email}",
+                "description": f"Role: {u.role.value} • Email: {u.email}",
                 "actor_name": u.full_name,
                 "status": "ACTIVE" if u.is_active else "PENDING_VERIFICATION",
                 "timestamp": u.created_at.isoformat(),

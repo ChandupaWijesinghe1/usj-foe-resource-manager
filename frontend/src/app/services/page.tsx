@@ -137,17 +137,8 @@ export default function ServicesPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        {/* Page Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">
-              Laboratory Services &amp; 3D Printing
-            </h1>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              Browse lab facilities, services, and submit 3D printing requests
-            </p>
-          </div>
-
+        {/* Page Actions */}
+        <div className="flex justify-end">
           <div className="flex flex-wrap items-center gap-2">
             {isLabAdmin && (
               <>

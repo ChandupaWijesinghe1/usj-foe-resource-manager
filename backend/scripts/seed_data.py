@@ -263,5 +263,15 @@ async def seed():
         print("Database initialized and seeded successfully!")
 
 
+async def main():
+    try:
+        await seed()
+    finally:
+        # Close pooled asyncpg connections while the event loop is still alive.
+        # Without this, Windows' Proactor loop logs "RuntimeError: Event loop is closed"
+        # when the leftover connections are garbage-collected after asyncio.run() exits.
+        await engine.dispose()
+
+
 if __name__ == "__main__":
-    asyncio.run(seed())
+    asyncio.run(main())

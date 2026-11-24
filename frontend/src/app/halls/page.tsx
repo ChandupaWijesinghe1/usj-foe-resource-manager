@@ -294,17 +294,9 @@ export default function HallsPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        {/* Page Title & Admin Action Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">Lecture Halls</h1>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              Browse auditoriums, lecture rooms, and schedule bookings
-            </p>
-          </div>
-
-          {isFacilityAdmin && (
-            <div className="flex items-center gap-2">
+        {/* Admin Action Bar */}
+        {isFacilityAdmin && (
+            <div className="flex items-center justify-end gap-2">
               <Button
                 variant="usj"
                 size="sm"
@@ -315,8 +307,7 @@ export default function HallsPage() {
                 <span>Add Lecture Hall</span>
               </Button>
             </div>
-          )}
-        </div>
+        )}
 
         {/* Filter Controls Bar */}
         <Card className="p-4 bg-card/60 backdrop-blur shadow-2xs">

@@ -25,7 +25,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 
 // Zod schema for Student registration
-export const studentRegisterSchema = z
+const studentRegisterSchema = z
   .object({
     full_name: z.string().min(2, "Full name must be at least 2 characters"),
     email: z
@@ -50,7 +50,7 @@ export const studentRegisterSchema = z
     path: ["confirm_password"],
   });
 
-export type StudentRegisterFormValues = z.infer<typeof studentRegisterSchema>;
+type StudentRegisterFormValues = z.infer<typeof studentRegisterSchema>;
 
 export default function RegisterPage() {
   const [serverError, setServerError] = useState<string | null>(null);

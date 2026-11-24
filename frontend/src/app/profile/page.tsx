@@ -118,14 +118,6 @@ export default function ProfilePage() {
   return (
     <DashboardLayout>
       <div className="space-y-6 max-w-4xl mx-auto">
-        {/* Header Title */}
-        <div className="border-b pb-4">
-          <h1 className="text-2xl font-bold tracking-tight">Profile &amp; Security</h1>
-          <p className="text-xs text-muted-foreground mt-0.5">
-            Manage your personal contact details and password
-          </p>
-        </div>
-
         {/* Profile Card Meta */}
         <Card className="surface-hero rounded-card shadow-elevation-sm">
           <CardHeader>

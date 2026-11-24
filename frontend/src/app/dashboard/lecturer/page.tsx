@@ -122,9 +122,9 @@ export default function LecturerDashboardPage() {
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">
+                <h2 className="text-2xl font-bold tracking-tight text-foreground">
                   Dr./Prof. {user?.full_name}
-                </h1>
+                </h2>
                 <Badge variant="gold" className="text-[10px] px-1.5 py-0">
                   Faculty Lecturer
                 </Badge>

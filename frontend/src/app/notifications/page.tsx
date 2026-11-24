@@ -87,15 +87,9 @@ export default function NotificationsPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">Notification History</h1>
-            <p className="text-sm text-muted-foreground">
-              Official university notices, booking decisions, equipment return alerts, and job progress
-            </p>
-          </div>
-          {unreadCount > 0 && (
+        {/* Header Actions */}
+        {unreadCount > 0 && (
+          <div className="flex justify-end">
             <Button
               variant="outline"
               size="sm"
@@ -105,8 +99,8 @@ export default function NotificationsPage() {
               <CheckCheck className="h-4 w-4 text-emerald-600" />
               <span>Mark all {unreadCount} unread as read</span>
             </Button>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Filter Controls */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-muted/30 p-3 rounded-xl border">

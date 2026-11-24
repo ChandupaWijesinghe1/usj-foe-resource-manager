@@ -130,16 +130,6 @@ export default function LecturersPage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        {/* Page Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">Lecturer Consultations</h1>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              Browse academic staff and schedule consultation slots
-            </p>
-          </div>
-        </div>
-
         {/* Search & Department Filters */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-card p-4 rounded-xl border">
           <div className="relative flex-1 max-w-md">
