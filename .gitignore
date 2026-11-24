@@ -3,6 +3,8 @@
 # =============================================================================
 
 # 1. Environment Variables & Secrets (CRITICAL: Never commit credentials)
+.env
+.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -81,6 +83,7 @@ temp/
 Thumbs.db
 Desktop.ini
 .idea/
+.vscode/
 *.sublime-project
 *.sublime-workspace
 *.swp
@@ -89,4 +92,3 @@ Desktop.ini
 # 9. Log Files
 *.log
 logs/
-config.bat
